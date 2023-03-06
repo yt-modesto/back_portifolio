@@ -1,10 +1,10 @@
-![Logo](https://github.com/yt-modesto/back_portifolio/documents/imgs/logo.png)
+![Logo](https://github.com/yt-modesto/back_portifolio/blob/main/documents/imgs/logo.png)
 
 ## :label: About
 This repository is intended for the back-end api structure that will serve for our web portfolio project [font-end](https://github.com/yt-modesto/front_portifolio)
 
 ## technologies used
-
+docker, nestjs , typeOrm ,postgres
 
 ## API documentation
 
@@ -39,6 +39,5 @@ This repository is intended for the back-end api structure that will serve for o
 ```
 - run code in terminal
 ```
-    chmod +x entrypoint.sh && docker-compose up
+    chmod +x .docker/entrypoint.sh && docker-compose up
 ```
-
