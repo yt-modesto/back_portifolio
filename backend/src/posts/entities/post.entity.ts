@@ -19,6 +19,5 @@ export class Post {
   user: Usuario;
 
   @OneToMany(() => Comment, (comment) => comment.postc)
-  @Column()
   comments: Comment[];
 }
