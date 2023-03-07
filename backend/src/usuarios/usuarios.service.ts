@@ -16,20 +16,19 @@ export class UsuariosService {
     const userVerifiked: CreateUsuarioDto = {
       email,
       password,
-      isAdmin: isAdmin !== undefined ? isAdmin : false,
-      isVisitant: isVisitant !== undefined ? isVisitant : false,
+      isAdmin: isAdmin !== null ? isAdmin : false,
+      isVisitant: isVisitant !== null ? isVisitant : false,
     };
 
-    return await this.userRepository.create(userVerifiked);
+    return await this.userRepository.save(userVerifiked);
   }
 
-  async findAll(): Promise<IUsers[]> {
+  async findAll(): Promise<Array<IUsers>> {
     return await this.userRepository.find();
   }
 
-  async findOne(id: number) {
-    // TODO: tratar: Promise<IUsers | null>;
-    return await this.userRepository.find({ where: { id } });
+  async findOne(id: number): Promise<IUsers> {
+    return await this.userRepository.findOne({ where: { id } });
   }
 
   async update(id: number, updateUserDto: UpdateUsuarioDto) {
@@ -41,5 +40,11 @@ export class UsuariosService {
     if (user) {
       await this.userRepository.remove(user);
     }
+  }
+  async findByEmailAndPassowrd(
+    email: string,
+    password: string,
+  ): Promise<IUsers> {
+    return await this.userRepository.findOne({ where: { email, password } });
   }
 }
