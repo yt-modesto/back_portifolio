@@ -6,6 +6,8 @@ import {
   Patch,
   Param,
   Delete,
+  HttpException,
+  HttpStatus,
 } from '@nestjs/common';
 import { CommentsService } from './comments.service';
 import { CreateCommentDto } from './dto/create-comment.dto';
@@ -22,7 +24,11 @@ export class CommentsController {
 
   @Get()
   findAll() {
-    return this.commentsService.findAll();
+    const listComments = this.commentsService.findAll();
+    if (!listComments) {
+      throw new HttpException(`Not have Comments in bd`, HttpStatus.NOT_FOUND);
+    }
+    return listComments;
   }
 
   @Get(':id')
