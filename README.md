@@ -50,7 +50,7 @@ docker, nestjs , typeOrm ,postgres
 ```
     {
         "email": "algumacoisa.gmail.com",
-        "password": "Umasenha934893895#@fd,
+        "password": "Umasenha934893895#@fd",
         "isAdmin": true,
         "isVisitant": false
     }
@@ -62,18 +62,19 @@ docker, nestjs , typeOrm ,postgres
    PATCH /api/users/${id}
 ```
 
-| Prerequisites | **send**                                                                   |
-| :------------ | :------------------------------------------------------------------------- |
+| Prerequisites | **send**                                                                 |
+| :------------ | :----------------------------------------------------------------------- |
 | **Body**      | valid user in json containing the update information in the request body |
 
 ```
     {
         "email": "algumacoisa.gmail.com",
-        "password": "Umasenha934893895#@fd,
+        "password": "Umasenha934893895#@fd",
         "isAdmin": true,
         "isVisitant": false
     }
 ```
+
 #### Delete an user
 
 ```http
